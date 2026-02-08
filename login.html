@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Single Page Login</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 80px; }
+    #home { display: none; }
+    input { padding: 8px; margin: 5px; }
+    button { padding: 8px 15px; }
+  </style>
+</head>
+<body>
+
+<!-- Login Section -->
+<div id="login">
+  <h2>Login</h2>
+  <input type="text" id="user" placeholder="Username"><br>
+  <input type="password" id="pass" placeholder="Password"><br>
+  <button onclick="login()">Login</button>
+</div>
+
+<!-- Home Section -->
+<div id="home">
+  <h1>Welcome!</h1>
+  <p>You have successfully logged in.</p>
+  <button onclick="logout()">Logout</button>
+</div>
+
+<script>
+  function login() {
+    var u = document.getElementById("user").value;
+    var p = document.getElementById("pass").value;
+
+    if (u === "admin" && p === "1234") {
+      document.getElementById("login").style.display = "none";
+      document.getElementById("home").style.display = "block";
+    } else {
+      alert("Wrong username or password");
+    }
+  }
+
+  function logout() {
+    document.getElementById("home").style.display = "none";
+    document.getElementById("login").style.display = "block";
+  }
+</script>
+
+</body>
+</html>
